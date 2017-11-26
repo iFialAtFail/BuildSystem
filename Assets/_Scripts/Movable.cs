@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Movable : MonoBehaviour
 {
@@ -11,11 +12,26 @@ public class Movable : MonoBehaviour
     private Vector3 initialMousePosition;
     private Vector3 offset;
     private MovementManager manager;
+    private SnapPoint[] snapPoints;
 
+    private bool isPlacing = false;
     public bool IsPlacing
     {
-        get;
-        protected set;
+        get
+        {
+            return isPlacing;
+        }
+        set
+        {
+            isPlacing = value;
+            if (snapPoints != null && snapPoints.Length > 0)
+            {
+                foreach (var snapPoint in snapPoints)
+                {
+                    snapPoint.SetSnappable(value);
+                }
+            }
+        }
     }
 
     public bool IsRotating
@@ -100,12 +116,18 @@ public class Movable : MonoBehaviour
         IsPlacing = false;
     }
 
+    public bool HasSnapPoint(SnapPoint snapToFind)
+    {
+        return snapPoints.Contains(snapToFind);
+    }
+
     private void Awake()
     {
         if (manager == null)
         {
             manager = GameObject.FindGameObjectWithTag("MovementManager").GetComponent<MovementManager>();
         }
+        snapPoints = GetComponentsInChildren<SnapPoint>();
     }
 
 }
