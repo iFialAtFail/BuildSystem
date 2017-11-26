@@ -6,7 +6,7 @@ using UnityEngine;
 public class Movable : MonoBehaviour
 {
     [SerializeField] private float gridSize = 1f;
-    [SerializeField] private float rotationSensitivity = 5f;
+    [SerializeField] private float rotationSensitivity = 15f;
 
     private Vector3 initialMousePosition;
     private Vector3 offset;
@@ -77,7 +77,7 @@ public class Movable : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             float angle = initialMousePosition.x - Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
-            transform.Rotate(Vector3.forward, angle * sensitivity);
+            transform.Rotate(Vector3.forward, angle * rotationSensitivity);
             initialMousePosition.x = Camera.main.ScreenToWorldPoint(Input.mousePosition).x;
         }
         else
