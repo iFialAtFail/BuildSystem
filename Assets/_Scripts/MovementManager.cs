@@ -6,6 +6,7 @@ public class MovementManager : MonoBehaviour
 {
     private Movable currentMovingObject = null;
     public bool snapToGrid = false;
+    public bool snapToPieces = false;
 
     // Use this for initialization
     void Start()
@@ -28,6 +29,11 @@ public class MovementManager : MonoBehaviour
         RayCastForMovableObject();
 
     }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <remarks>TODO: Encapsulate into multiple methods. Handle input in update method then call methods from there.</remarks>
     private void RayCastForMovableObject()
     {
         if (Input.GetMouseButtonDown(0))

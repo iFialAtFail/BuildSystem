@@ -9,6 +9,8 @@ public class Movable : MonoBehaviour
     [SerializeField] private float gridSize = 1f;
     [SerializeField] private float rotationSensitivity = 15f;
 
+    public Action mouseClickReleased;
+
     private Vector3 initialMousePosition;
     private Vector3 offset;
     private MovementManager manager;
@@ -24,7 +26,7 @@ public class Movable : MonoBehaviour
         set
         {
             isPlacing = value;
-            if (snapPoints != null && snapPoints.Length > 0)
+            if (snapPoints != null && snapPoints.Length > 0 && manager.snapToPieces == true)
             {
                 foreach (var snapPoint in snapPoints)
                 {
@@ -69,6 +71,14 @@ public class Movable : MonoBehaviour
         }
         else if (Input.GetMouseButtonUp(0))
         {
+            foreach (var snapPoint in snapPoints)
+            {
+                if (snapPoint.ClosestSnapPointDetected != null)
+                {
+                    snapPoint.SnapObjects();
+                    break; //just snap to one object. That's it. 
+                }
+            }
             IsPlacing = false;
         }
     }

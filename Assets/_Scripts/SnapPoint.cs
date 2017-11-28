@@ -8,9 +8,15 @@ public class SnapPoint : MonoBehaviour
 {
     public Collider2D collider;
     private Movable parentMovableObject;
-    private SnapPoint closestSnapPoint;
+    private SnapPoint closestSnapPointDetected;
     [SerializeField] private GameObject sphereIndicatorPrefab;
     private GameObject sphereIndicator;
+
+    public SnapPoint ClosestSnapPointDetected
+    {
+        get { return closestSnapPointDetected; }
+        private set { closestSnapPointDetected = value; }
+    }
 
     private void Awake()
     {
@@ -50,14 +56,14 @@ public class SnapPoint : MonoBehaviour
 
         if (snapPointObjects == null || snapPointObjects.Length == 0) return;
 
-        closestSnapPoint = GetClosestSnapPoint(snapPointObjects);
+        closestSnapPointDetected = GetClosestSnapPoint(snapPointObjects);
 
 
-        if (closestSnapPoint != null)
+        if (closestSnapPointDetected != null)
         {
-            if (sphereIndicator == null) sphereIndicator = Instantiate(sphereIndicatorPrefab, closestSnapPoint.transform);
+            if (sphereIndicator == null) sphereIndicator = Instantiate(sphereIndicatorPrefab, closestSnapPointDetected.transform);
         }
-        else if (closestSnapPoint == null && sphereIndicator != null)
+        else if (closestSnapPointDetected == null && sphereIndicator != null)
         {
             Destroy(sphereIndicator.gameObject);
         }
@@ -65,7 +71,7 @@ public class SnapPoint : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (sphereIndicator != null) Destroy(sphereIndicator.gameObject);
-        if (closestSnapPoint != null) closestSnapPoint = null;
+        if (closestSnapPointDetected != null) closestSnapPointDetected = null;
     }
 
     private SnapPoint GetClosestSnapPoint(SnapPoint[] snapPointObjects)
@@ -85,5 +91,21 @@ public class SnapPoint : MonoBehaviour
             }
         }
         return closestPoint;
+    }
+
+    public void SnapObjects()
+    {
+        //move snap point doing the detecting to the closest one detected. Make sure whole parent moves with it.
+        //var originalChildOffset = transform.localPosition;
+
+        //transform.position = closestSnapPointDetected.transform.position;
+
+        ////Move the parent to the child with the offset.
+        //transform.parent.position = transform.position - originalChildOffset;
+        //transform.localPosition = originalChildOffset;
+
+        Vector3 theChildsMove = closestSnapPointDetected.transform.position - transform.position;
+        //transform.position = closestSnapPointDetected.transform.position;
+        transform.parent.position += theChildsMove;
     }
 }
