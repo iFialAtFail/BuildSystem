@@ -16,30 +16,20 @@ public class Movable : MonoBehaviour
     private MovementManager manager;
     private SnapPoint[] snapPoints;
 
-    private bool isPlacing = false;
     public bool IsPlacing
     {
-        get
-        {
-            return isPlacing;
-        }
-        set
-        {
-            isPlacing = value;
-            if (snapPoints != null && snapPoints.Length > 0 && manager.snapToPieces == true)
-            {
-                foreach (var snapPoint in snapPoints)
-                {
-                    snapPoint.SetSnappable(value);
-                }
-            }
-        }
+        get; set;
     }
 
     public bool IsRotating
     {
         get;
         protected set;
+    }
+
+    public bool ShouldSnapToObject
+    {
+        get { return manager.snapToPieces; }
     }
 
     public void FollowMouse()
@@ -71,12 +61,15 @@ public class Movable : MonoBehaviour
         }
         else if (Input.GetMouseButtonUp(0))
         {
-            foreach (var snapPoint in snapPoints)
+            if (ShouldSnapToObject)
             {
-                if (snapPoint.ClosestSnapPointDetected != null)
+                foreach (var snapPoint in snapPoints)
                 {
-                    snapPoint.SnapObjects();
-                    break; //just snap to one object. That's it. 
+                    if (snapPoint.ClosestSnapPointDetected != null)
+                    {
+                        snapPoint.SnapObjects();
+                        break; //just snap to one object. That's it. 
+                    }
                 }
             }
             IsPlacing = false;
