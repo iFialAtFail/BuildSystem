@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 125317308}
   - component: {fileID: 125317310}
   - component: {fileID: 125317309}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OtherSnapPoint2
   m_TagString: snapPoint
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325ddbdcb549ca447855e385cf438a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 125317310}
+  snapsCollider: {fileID: 0}
   sphereIndicatorPrefab: {fileID: 1457949754434294, guid: 09e0405efad46ac47aa645190ea23c10,
     type: 2}
 --- !u!61 &125317310
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 133396312}
   - component: {fileID: 133396314}
   - component: {fileID: 133396313}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SnapPoint1
   m_TagString: snapPoint
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325ddbdcb549ca447855e385cf438a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 133396314}
+  snapsCollider: {fileID: 0}
   sphereIndicatorPrefab: {fileID: 1457949754434294, guid: 09e0405efad46ac47aa645190ea23c10,
     type: 2}
 --- !u!61 &133396314
@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 176008954}
   - component: {fileID: 176008956}
   - component: {fileID: 176008955}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SnapPoint2
   m_TagString: snapPoint
   m_Icon: {fileID: 0}
@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325ddbdcb549ca447855e385cf438a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 176008956}
+  snapsCollider: {fileID: 0}
   sphereIndicatorPrefab: {fileID: 1457949754434294, guid: 09e0405efad46ac47aa645190ea23c10,
     type: 2}
 --- !u!61 &176008956
@@ -417,7 +417,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 327454492}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -232.5, y: 24.799988, z: 0}
+  m_LocalPosition: {x: -251.5, y: 24.799988, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1923249225}
@@ -495,7 +495,7 @@ GameObject:
   - component: {fileID: 402035739}
   - component: {fileID: 402035741}
   - component: {fileID: 402035740}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OtherSnapPoint1
   m_TagString: snapPoint
   m_Icon: {fileID: 0}
@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325ddbdcb549ca447855e385cf438a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 402035741}
+  snapsCollider: {fileID: 0}
   sphereIndicatorPrefab: {fileID: 1457949754434294, guid: 09e0405efad46ac47aa645190ea23c10,
     type: 2}
 --- !u!61 &402035741
@@ -591,7 +591,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4288852177591368, guid: e6311c8146d7f414a8aa968fd369e25c, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1063708761200406, guid: e6311c8146d7f414a8aa968fd369e25c, type: 2}
       propertyPath: m_Name
@@ -642,7 +642,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4288852177591368, guid: e6311c8146d7f414a8aa968fd369e25c, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1063708761200406, guid: e6311c8146d7f414a8aa968fd369e25c, type: 2}
       propertyPath: m_Name
@@ -655,6 +655,48 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e6311c8146d7f414a8aa968fd369e25c, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &620203004
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4658044058483354, guid: d1a74cc99d8fb564e96761116c1e8d7b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0.38039717
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658044058483354, guid: d1a74cc99d8fb564e96761116c1e8d7b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.49455374
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658044058483354, guid: d1a74cc99d8fb564e96761116c1e8d7b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658044058483354, guid: d1a74cc99d8fb564e96761116c1e8d7b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658044058483354, guid: d1a74cc99d8fb564e96761116c1e8d7b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658044058483354, guid: d1a74cc99d8fb564e96761116c1e8d7b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658044058483354, guid: d1a74cc99d8fb564e96761116c1e8d7b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4658044058483354, guid: d1a74cc99d8fb564e96761116c1e8d7b, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: d1a74cc99d8fb564e96761116c1e8d7b, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &644396354
 GameObject:
@@ -761,7 +803,7 @@ GameObject:
   - component: {fileID: 665194282}
   - component: {fileID: 665194284}
   - component: {fileID: 665194283}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OtherSnapPoint2
   m_TagString: snapPoint
   m_Icon: {fileID: 0}
@@ -792,7 +834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325ddbdcb549ca447855e385cf438a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 665194284}
+  snapsCollider: {fileID: 0}
   sphereIndicatorPrefab: {fileID: 1457949754434294, guid: 09e0405efad46ac47aa645190ea23c10,
     type: 2}
 --- !u!61 &665194284
@@ -830,7 +872,7 @@ GameObject:
   - component: {fileID: 688434665}
   - component: {fileID: 688434667}
   - component: {fileID: 688434666}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SnapPoint1
   m_TagString: snapPoint
   m_Icon: {fileID: 0}
@@ -861,7 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325ddbdcb549ca447855e385cf438a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 688434667}
+  snapsCollider: {fileID: 0}
   sphereIndicatorPrefab: {fileID: 1457949754434294, guid: 09e0405efad46ac47aa645190ea23c10,
     type: 2}
 --- !u!61 &688434667
@@ -901,6 +943,7 @@ GameObject:
   - component: {fileID: 708829918}
   - component: {fileID: 708829917}
   - component: {fileID: 708829916}
+  - component: {fileID: 708829921}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -977,6 +1020,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &708829921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 708829915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0193e3ece3102de4aa049cc89ade6d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomSensitivity: 1
+  reverseZoomScroll: 0
+  dragSensitivity: 55
 --- !u!1001 &735082480
 Prefab:
   m_ObjectHideFlags: 0
@@ -1117,7 +1174,7 @@ GameObject:
   - component: {fileID: 862693290}
   - component: {fileID: 862693292}
   - component: {fileID: 862693291}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OtherSnapPoint2
   m_TagString: snapPoint
   m_Icon: {fileID: 0}
@@ -1148,7 +1205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325ddbdcb549ca447855e385cf438a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 862693292}
+  snapsCollider: {fileID: 0}
   sphereIndicatorPrefab: {fileID: 1457949754434294, guid: 09e0405efad46ac47aa645190ea23c10,
     type: 2}
 --- !u!61 &862693292
@@ -1258,7 +1315,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 919688229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 387.5, y: 357.5, z: 0}
+  m_LocalPosition: {x: 406.5, y: 357.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 644396355}
@@ -1311,7 +1368,7 @@ GameObject:
   - component: {fileID: 970080346}
   - component: {fileID: 970080348}
   - component: {fileID: 970080347}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SnapPoint2
   m_TagString: snapPoint
   m_Icon: {fileID: 0}
@@ -1342,7 +1399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325ddbdcb549ca447855e385cf438a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 970080348}
+  snapsCollider: {fileID: 0}
   sphereIndicatorPrefab: {fileID: 1457949754434294, guid: 09e0405efad46ac47aa645190ea23c10,
     type: 2}
 --- !u!61 &970080348
@@ -1547,7 +1604,7 @@ GameObject:
   - component: {fileID: 1261277657}
   - component: {fileID: 1261277659}
   - component: {fileID: 1261277658}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OtherSnapPoint1
   m_TagString: snapPoint
   m_Icon: {fileID: 0}
@@ -1578,7 +1635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325ddbdcb549ca447855e385cf438a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 1261277659}
+  snapsCollider: {fileID: 0}
   sphereIndicatorPrefab: {fileID: 1457949754434294, guid: 09e0405efad46ac47aa645190ea23c10,
     type: 2}
 --- !u!61 &1261277659
@@ -1663,7 +1720,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1389295291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -127.5, y: 24.799988, z: 0}
+  m_LocalPosition: {x: -146.5, y: 24.799988, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2055827950}
@@ -1771,7 +1828,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4288852177591368, guid: e6311c8146d7f414a8aa968fd369e25c, type: 2}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1063708761200406, guid: e6311c8146d7f414a8aa968fd369e25c, type: 2}
       propertyPath: m_Name
@@ -1822,7 +1879,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4288852177591368, guid: e6311c8146d7f414a8aa968fd369e25c, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1063708761200406, guid: e6311c8146d7f414a8aa968fd369e25c, type: 2}
       propertyPath: m_Name
@@ -1846,7 +1903,7 @@ Prefab:
     - target: {fileID: 224760738205776236, guid: f8cbd72103ce0934fa1e8e2182c12cfa,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -337.5
+      value: -356.5
       objectReference: {fileID: 0}
     - target: {fileID: 224760738205776236, guid: f8cbd72103ce0934fa1e8e2182c12cfa,
         type: 2}
@@ -1946,7 +2003,7 @@ GameObject:
   - component: {fileID: 1470550220}
   - component: {fileID: 1470550222}
   - component: {fileID: 1470550221}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SnapPoint2
   m_TagString: snapPoint
   m_Icon: {fileID: 0}
@@ -1977,7 +2034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325ddbdcb549ca447855e385cf438a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 1470550222}
+  snapsCollider: {fileID: 0}
   sphereIndicatorPrefab: {fileID: 1457949754434294, guid: 09e0405efad46ac47aa645190ea23c10,
     type: 2}
 --- !u!61 &1470550222
@@ -2015,7 +2072,7 @@ GameObject:
   - component: {fileID: 1504485641}
   - component: {fileID: 1504485643}
   - component: {fileID: 1504485642}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: OtherSnapPoint1
   m_TagString: snapPoint
   m_Icon: {fileID: 0}
@@ -2046,7 +2103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325ddbdcb549ca447855e385cf438a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 1504485643}
+  snapsCollider: {fileID: 0}
   sphereIndicatorPrefab: {fileID: 1457949754434294, guid: 09e0405efad46ac47aa645190ea23c10,
     type: 2}
 --- !u!61 &1504485643
@@ -2083,11 +2140,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4958066526307490, guid: fb9301591bc36a648b497e5462fd8a25, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.939739
+      value: -2.11
       objectReference: {fileID: 0}
     - target: {fileID: 4958066526307490, guid: fb9301591bc36a648b497e5462fd8a25, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.6336815
+      value: -1.59
       objectReference: {fileID: 0}
     - target: {fileID: 4958066526307490, guid: fb9301591bc36a648b497e5462fd8a25, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2126,6 +2183,18 @@ Prefab:
     - target: {fileID: 114819058260420386, guid: fb9301591bc36a648b497e5462fd8a25,
         type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230257644476576, guid: fb9301591bc36a648b497e5462fd8a25, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767626569582072, guid: fb9301591bc36a648b497e5462fd8a25, type: 2}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615764000759216, guid: fb9301591bc36a648b497e5462fd8a25, type: 2}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -2171,7 +2240,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4288852177591368, guid: e6311c8146d7f414a8aa968fd369e25c, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1063708761200406, guid: e6311c8146d7f414a8aa968fd369e25c, type: 2}
       propertyPath: m_Name
@@ -2210,48 +2279,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &1618021290
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1618021292}
-  - component: {fileID: 1618021291}
-  m_Layer: 0
-  m_Name: Movement Manager
-  m_TagString: MovementManager
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1618021291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1618021290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74b76f80163d2464393ec7bddf80afa8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snapToGrid: 0
-  snapToPieces: 1
---- !u!4 &1618021292
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1618021290}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.38039717, y: -0.49455374, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1644839909
 GameObject:
   m_ObjectHideFlags: 0
@@ -2514,7 +2541,7 @@ GameObject:
   - component: {fileID: 2026703461}
   - component: {fileID: 2026703463}
   - component: {fileID: 2026703462}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SnapPoint1
   m_TagString: snapPoint
   m_Icon: {fileID: 0}
@@ -2545,7 +2572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 325ddbdcb549ca447855e385cf438a26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 2026703463}
+  snapsCollider: {fileID: 0}
   sphereIndicatorPrefab: {fileID: 1457949754434294, guid: 09e0405efad46ac47aa645190ea23c10,
     type: 2}
 --- !u!61 &2026703463
