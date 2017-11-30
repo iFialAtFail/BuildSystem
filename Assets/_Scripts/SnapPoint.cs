@@ -7,6 +7,7 @@ using UnityEngine;
 public class SnapPoint : MonoBehaviour
 {
     public Collider2D snapsCollider;
+    
 
     private Movable parentMovableObject;
     private SnapPoint closestSnapPointDetected;
@@ -31,18 +32,18 @@ public class SnapPoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        ProcessSnapPointsInTrigger();
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+   
+
+    private void ProcessSnapPointsInTrigger()
     {
+        if (collidedSnapPoints.Count == 0) return;
+
         if (parentMovableObject.ShouldSnapToObject == false || !parentMovableObject.IsPlacing) return;
-        if (collision.transform.parent == null) return;
-        var snapPointObjects = collision.transform.parent.gameObject.GetComponentsInChildren<SnapPoint>();
 
-        if (snapPointObjects == null || snapPointObjects.Length == 0) return;
-
-        closestSnapPointDetected = GetClosestSnapPoint(snapPointObjects);
+        closestSnapPointDetected = GetClosestSnapPoint(collidedSnapPoints.ToArray());
 
 
         if (closestSnapPointDetected != null)
@@ -62,15 +63,36 @@ public class SnapPoint : MonoBehaviour
             Destroy(sphereIndicator.gameObject);
         }
     }
+    private List<SnapPoint> collidedSnapPoints = new List<SnapPoint>();
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        var collidedSnapPoint = collision.GetComponent<SnapPoint>();
+        if (collidedSnapPoint == null) return;
+        if (!collidedSnapPoints.Contains(collidedSnapPoint))
+        {
+            collidedSnapPoints.Add(collidedSnapPoint);
+        }
+    }
+
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (sphereIndicator != null) Destroy(sphereIndicator.gameObject);
         if (closestSnapPointDetected != null) closestSnapPointDetected = null;
+
+        var collidedSnapPoint = collision.GetComponent<SnapPoint>();
+        if (collidedSnapPoint == null) return;
+        if (collidedSnapPoints.Contains(collidedSnapPoint))
+        {
+            collidedSnapPoints.Remove(collidedSnapPoint);
+        }
     }
 
     private SnapPoint GetClosestSnapPoint(SnapPoint[] snapPointObjects)
     {
-        if (snapPointObjects.Length == 1) return snapPointObjects[0];
+        if (snapPointObjects.Length == 1)
+            return snapPointObjects[0];
 
         SnapPoint closestPoint = snapPointObjects[0];
         float distance = float.MaxValue;
@@ -90,7 +112,7 @@ public class SnapPoint : MonoBehaviour
     public void SnapObjects()
     {
         Vector3 theChildsMove = closestSnapPointDetected.transform.position - transform.position;
-        transform.parent.position += theChildsMove;
+        parentMovableObject.transform.position += theChildsMove;
         if (sphereIndicator != null) Destroy(sphereIndicator.gameObject);
     }
 }

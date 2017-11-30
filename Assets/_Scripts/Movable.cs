@@ -18,7 +18,8 @@ public class Movable : MonoBehaviour
 
     public bool IsPlacing
     {
-        get; set;
+        get;
+        set;
     }
 
     public bool IsRotating
