@@ -26,6 +26,7 @@ public class SnapPoint : MonoBehaviour
         if (parentMovableObject == null) Debug.LogWarning("Can't have a Snap Point without a Movable object as the parent game object.");
 
         snapsCollider = GetComponent<Collider2D>();
+        snapsCollider.enabled = true;
         snapsCollider.isTrigger = true;
     }
 
