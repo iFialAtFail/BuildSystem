@@ -72,6 +72,10 @@ public class Movable : MonoBehaviour
                         break; //just snap to one object. That's it. 
                     }
                 }
+                foreach (var snapPoint in snapPoints)
+                {
+                    snapPoint.RemoveSphereIndicators();
+                }
             }
             IsPlacing = false;
         }

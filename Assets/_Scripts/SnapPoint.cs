@@ -116,4 +116,9 @@ public class SnapPoint : MonoBehaviour
         parentMovableObject.transform.position += theChildsMove;
         if (sphereIndicator != null) Destroy(sphereIndicator.gameObject);
     }
+
+    public void RemoveSphereIndicators()
+    {
+        if (sphereIndicator != null) Destroy(sphereIndicator.gameObject);
+    }
 }
